@@ -32,9 +32,21 @@ function toWeekData(xdata, mega, kw)
 
 }
 
-function drawTodayPlot(id, xdata, ydata)
-{
-  var data = 
+
+  var data = [
+    {
+      x: ['2016-11-04 03:00', '2016-11-04 04:00', '2016-11-04 05:00'],
+      y: [54, 23, 79],
+      type: 'scatter',
+      line: {
+        color: 'rgba(255,255,255,0.9)'
+      },
+      marker: {
+        size: 10,
+        color: 'rgba(255,255,255,0.7)'
+      }
+    }
+  ];
 
   var layout = {
     paper_bgcolor: 'rgba(0,0,0,0)',
@@ -60,8 +72,8 @@ function drawTodayPlot(id, xdata, ydata)
     }
   }
 
-  Plotly.newPlot(id, data, layout);
-}
+  Plotly.newPlot('todayAgs', data, layout);
+
 
 
 
