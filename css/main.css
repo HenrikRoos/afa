@@ -1,0 +1,52 @@
+@import 'https://fonts.googleapis.com/css?family=Oranienbaum|PT+Sans+Narrow';
+
+body{
+  font-family: 'PT Sans Narrow', sans-serif;
+  color: white;
+  background-color: steelblue;
+  padding: 0;
+  margin: 0;
+  font-size: larger;
+}
+h1, h2{
+  margin: 0;
+}
+h2 {
+  font-size: x-large;
+}
+strong {
+  font-size: 1.7em;
+  font-family: 'Oranienbaum', serif;
+  vertical-align: -15%;
+}
+span{
+  font-size: x-large;
+  vertical-align: -15%;
+  font-family: 'Oranienbaum', serif;
+}
+.head{
+  padding: 1%;
+  font-size: larger;
+}
+.box{
+  color: rgba(255, 255, 255, 0.85);
+  border: 0;
+  border-radius: 3%;
+  float: left;
+  margin: 0 0 1% 1%;
+  padding: 1%;
+  width: 46.5%;
+  background-color: rgba(0, 0, 0, 0.20);
+}
+.today {
+  border-bottom: thin dashed white;
+  margin-bottom: 0.8em;
+  padding-bottom: 1em;
+}
+
+@media only screen and (max-width: 768px) {
+  .box {
+    width: 96%;
+    clear: left;
+  }
+}

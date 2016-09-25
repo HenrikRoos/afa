@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Antal anmälningar</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/main.css" />
+  <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+  <div class="head">
+  <h1>Antal anmälningar</h1>
+  gjorda på minasidor.afaforsakring.se
+</div>
+  <div class="box">
+    <h2>Sjukskrivning (AGS/AGS-KL)</h2>
+    <div class="today">
+      Hittils idag <strong>65</strong> ( <span>87</span> i går )
+      <div id="todayAgs"></div>
+    </div>
+    <div class="week">
+      Senaste 7 dagarna <strong>640</strong> (medel <span>84</span> per dag)
+      <div id="weekAgs"></div>
+    </div>
+  </div>
+
+  <div class="box" id="pbffp">
+    <h2>Föräldrarpenning (PBFFP)</h2>
+    <div class="today">
+      <div class="plot"></div>
+      Hittils idag <strong>65</strong> (87 i går)
+    </div>
+    <div class="week">
+      <div class="plot"></div>
+      Senaste 7 dagarna <strong>640</strong> (medel 84 per dag)
+    </div>
+  </div>
+
+  <div class="box" id="tfaa">
+    <h2>Arbetssjukdom (TFAA)</h2>
+    <div class="today">
+      <div class="plot"></div>
+      Hittils idag <strong>65</strong> (87 i går)
+    </div>
+    <div class="week">
+      <div class="plot"></div>
+      Senaste 7 dagarna <strong>640</strong> (medel 84 per dag)
+    </div>
+  </div>
+
+  <div class="box" id="tfao">
+    <h2>Olycksfall (TFAO)</h2>
+    <div class="today">
+      <div class="plot"></div>
+      Hittils idag <strong>65</strong> (87 i går)
+    </div>
+    <div class="week">
+      <div class="plot"></div>
+      Senaste 7 dagarna <strong>640</strong> (medel 84 per dag)
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/plot.js"></script>
+</body>
+
+</html>
