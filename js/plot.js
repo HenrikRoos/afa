@@ -1,11 +1,11 @@
-/*
- x: ['2013-11-04 03:00:00', '2013-11-04 05:23:00', '2013-11-04 12:23:00'],
-      y: [1, 3, 6],
-*/
-
-function drawTodayPlot(id, xdata, ydata)
+/**
+ * @param {Array<datetime>} xdata - Array of times e.g ['2016-11-04 03:00', '2016-11-04 04:00', '2016-11-04 05:00']
+ * @param {Array<number>} ydata - Number of claims for each time. e.g [54, 23, 79]
+ * @return {Array<object>} Array with a singel element mach Plotly requirements of data
+ */
+function toTodayData(xdata, ydata)
 {
-  var data = [
+  return [
     {
       x: xdata,
       y: ydata,
@@ -19,6 +19,22 @@ function drawTodayPlot(id, xdata, ydata)
       }
     }
   ];
+}
+
+/**
+ * @param {Array<datetime>} xdata - Array of dates e.g ['2016-11-05', '2016-11-06', '2016-11-07']
+ * @param {Array<number>} mega - Number of claims in mega for each time in xdata e.g [20, 43, 87]
+ * @param {Array<number>} kw - Number of claims in afa.insured for each time in xdata e.g [10, 23, 12]
+ * @return {Array<object>} Array with a tow element mach Plotly requirements of data
+ */
+function toWeekData(xdata, mega, kw)
+{
+
+}
+
+function drawTodayPlot(id, xdata, ydata)
+{
+  var data = 
 
   var layout = {
     paper_bgcolor: 'rgba(0,0,0,0)',
