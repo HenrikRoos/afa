@@ -1,14 +1,14 @@
 /**
- * @param {Array<datetime>} xdata - Array of times e.g ['2016-11-04 03:00', '2016-11-04 04:00', '2016-11-04 05:00']
- * @param {Array<number>} ydata - Number of claims for each time. e.g [54, 23, 79]
- * @return {Array<object>} Array with a singel element mach Plotly requirements of data
+ * @param {Array<datetime>} times - Mätpunkternas tidpunkt t.ex ['2016-11-04 03:00', '2016-11-04 04:00', '2016-11-04 05:00']
+ * @param {Array<number>} claims - Antal anmälningar vid varje tidsintervall t.ex [54, 23, 79]
+ * @return {Array<object>} Array med ett element som följer Plotly krav av data
  */
-function toTodayData(xdata, ydata)
+function toTodayData(times, claims)
 {
   return [
     {
-      x: xdata,
-      y: ydata,
+      x: times,
+      y: claims,
       type: 'scatter',
       line: {
         color: 'rgba(255,255,255,0.9)'
@@ -22,14 +22,51 @@ function toTodayData(xdata, ydata)
 }
 
 /**
- * @param {Array<datetime>} xdata - Array of dates e.g ['2016-11-05', '2016-11-06', '2016-11-07']
- * @param {Array<number>} mega - Number of claims in mega for each time in xdata e.g [20, 43, 87]
- * @param {Array<number>} kw - Number of claims in afa.insured for each time in xdata e.g [10, 23, 12]
- * @return {Array<object>} Array with a tow element mach Plotly requirements of data
+ * @param {Array<datetime>} xdata - Mätpunkternas tidpunkt t.ex ['2016-11-05', '2016-11-06', '2016-11-07']
+ * @param {Array<number>} mega - Antal anmälningar som är skickade till mega vid varje tidsintervall t.ex [20, 43, 87]
+ * @param {Array<number>} kw - Antal anmälningar som inte är skickade till mega vid varje tidsintervall [10, 23, 12]
+ * @return {Array<object>} Array med två element som följer Plotly krav av data
  */
-function toWeekData(xdata, mega, kw)
+function toWeekData(times, megaClaims, kwClaims)
 {
+  var megaTexts;
+  megaClaims.forEach(function(claim) {
+    this.megaTexts.add('sparad i mega');
+  }, this);
 
+  var mega = {
+    x: times,
+    y: megaClaims,
+    text: megaTexts,
+    type: 'bar',
+    showlegend: false,
+    hoverinfo: 'y+text',
+    marker: {
+      color: 'rgba(130,180,70,0.8)',
+      line: {
+        color: 'rgba(130,180,70,1)',
+        width: 1
+      }
+    }
+  };
+
+  var kw = {
+    x: times,
+    y: kwClaims,
+    text: ['vänta på bekräftan','vänta på bekräftan','vänta på bekräftan','vänta på bekräftan','vänta på bekräftan','vänta på bekräftan','vänta på bekräftan'],
+    type: 'bar',
+    hoverinfo: 'y+text',
+    showlegend: false,
+      marker: {
+      color: 'rgba(255,150,0,0.6)',
+      line: {
+        color: 'rgba(255,150,0,0.8)',
+        width: 1
+      }
+    }
+  };
+
+  return [mega, kw];
 }
 
 
