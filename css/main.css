@@ -1,4 +1,16 @@
-@import 'https://fonts.googleapis.com/css?family=Oranienbaum|PT+Sans+Narrow';
+@font-face {
+    font-family: 'PT Sans Narrow';
+    font-style: normal;
+    font-weight: 400;
+    src: local('PT Sans Narrow'), local('PTSans-Narrow'), url(fonts/PT_Sans-Narrow-Web-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Oranienbaum';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Oranienbaum'), local('Oranienbaum-Regular'), url(fonts/Oranienbaum-Regular.ttf) format('truetype');
+}
 
 body{
   font-family: 'PT Sans Narrow', sans-serif;
@@ -38,7 +50,10 @@ span{
   width: 46.5%;
   background-color: rgba(0, 0, 0, 0.20);
 }
-.today {
+.today > div{
+  height: 15em;
+}
+.box > div:first-of-type {
   border-bottom: thin dashed white;
   margin-bottom: 0.8em;
   padding-bottom: 1em;
